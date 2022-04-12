@@ -1,6 +1,6 @@
 import { ActionIcon } from "@mantine/core";
 import { useInterval } from "use-interval";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 const getMinutesStr = (time) => {
   return Math.floor(time / 60)
@@ -28,6 +28,15 @@ const App = () => {
       setTime(newTime);
     }
   }, 10);
+
+  const handleOnStart = useCallback(() => {
+    setPlaying(!playing);
+  }, [playing]);
+
+  const handleOnReset = useCallback(() => {
+    setPlaying(false);
+    setTime(0);
+  }, []);
 
   return (
     <div
@@ -70,7 +79,7 @@ const App = () => {
           style={{
             margin: "0 10px",
           }}
-          onClick={() => setPlaying(!playing)}
+          onClick={handleOnStart}
         >
           {playing ? "STOP" : "START"}
         </ActionIcon>
@@ -81,12 +90,7 @@ const App = () => {
           style={{
             margin: "0 10px",
           }}
-          onClick={() => {
-            if (time > 0) {
-              setPlaying(false);
-              setTime(0);
-            }
-          }}
+          onClick={handleOnReset}
         >
           RESET
         </ActionIcon>
