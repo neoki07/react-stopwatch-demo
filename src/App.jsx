@@ -19,22 +19,21 @@ const getCentiSecondsStr = (time) => {
 };
 
 const App = () => {
-  const [playing, setPlaying] = useState(false);
+  const [running, setRunning] = useState(false);
   const [time, setTime] = useState(0);
 
   useInterval(() => {
-    if (playing) {
-      const newTime = time + 0.01;
-      setTime(newTime);
+    if (running) {
+      setTime((t) => t + 0.01);
     }
   }, 10);
 
   const handleOnStart = useCallback(() => {
-    setPlaying(!playing);
-  }, [playing]);
+    setRunning(!running);
+  }, [running]);
 
   const handleOnReset = useCallback(() => {
-    setPlaying(false);
+    setRunning(false);
     setTime(0);
   }, []);
 
@@ -81,7 +80,7 @@ const App = () => {
           }}
           onClick={handleOnStart}
         >
-          {playing ? "STOP" : "START"}
+          {running ? "STOP" : "START"}
         </ActionIcon>
         <ActionIcon
           variant="outline"
