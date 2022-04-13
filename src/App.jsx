@@ -47,18 +47,19 @@ const App = () => {
         alignItems: "center",
       }}
     >
-      <div style={{ display: "flex" }}>
-        <div style={{ margin: "0 5px", fontSize: "50px" }}>
-          {getMinutesStr(time)}
+      <div style={{ display: "flex", fontSize: "120px" }}>
+        <div style={{ margin: "0 5px" }}>{getMinutesStr(time)}</div>
+        <div
+          style={{
+            margin: "0 5px",
+            transform: "translateY(-8px)",
+          }}
+        >
+          :
         </div>
-        <div style={{ margin: "0 5px", fontSize: "50px" }}>:</div>
-        <div style={{ margin: "0 5px", fontSize: "50px" }}>
-          {getSecondsStr(time)}
-        </div>
-        <div style={{ margin: "0 5px", fontSize: "50px" }}>.</div>
-        <div style={{ margin: "0 5px", fontSize: "50px" }}>
-          {getCentiSecondsStr(time)}
-        </div>
+        <div style={{ margin: "0 5px" }}>{getSecondsStr(time)}</div>
+        <div style={{ margin: "0 5px" }}>.</div>
+        <div style={{ margin: "0 5px" }}>{getCentiSecondsStr(time)}</div>
       </div>
       <div style={{ display: "flex", alignItems: "flex-end" }}>
         <ActionIcon
