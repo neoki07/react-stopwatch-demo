@@ -38,58 +38,32 @@ const App = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div style={{ display: "flex", fontSize: "120px" }}>
-        <div style={{ margin: "0 5px" }}>{getMinutesStr(time)}</div>
-        <div
-          style={{
-            margin: "0 5px",
-            transform: "translateY(-8px)",
-          }}
-        >
-          :
-        </div>
-        <div style={{ margin: "0 5px" }}>{getSecondsStr(time)}</div>
-        <div style={{ margin: "0 5px" }}>.</div>
-        <div style={{ margin: "0 5px" }}>{getCentiSecondsStr(time)}</div>
+    <div className="antialiased h-screen flex flex-col justify-center items-center">
+      <div className="my-6 flex font-roboto text-9xl text-gray-800">
+        <div className="mx-3">{getMinutesStr(time)}</div>
+        <div className="-translate-y-2.5">:</div>
+        <div className="mx-3">{getSecondsStr(time)}</div>
+        <div>.</div>
+        <div className="mx-3">{getCentiSecondsStr(time)}</div>
       </div>
-      <div style={{ display: "flex", alignItems: "flex-end" }}>
-        <ActionIcon
-          variant="outline"
-          size={60}
-          radius={"50%"}
-          style={{
-            margin: "0 10px",
-          }}
-        >
+      <div className="my-6 flex items-end">
+        <ActionIcon className="mx-8" variant="outline" size={90} radius={"50%"}>
           DUMMY
         </ActionIcon>
         <ActionIcon
+          className="mx-8"
           variant="outline"
-          size={80}
+          size={120}
           radius={"50%"}
-          style={{
-            margin: "0 10px",
-          }}
           onClick={handleOnStart}
         >
           {running ? "STOP" : "START"}
         </ActionIcon>
         <ActionIcon
+          className="mx-8"
           variant="outline"
-          size={60}
+          size={90}
           radius={"50%"}
-          style={{
-            margin: "0 10px",
-          }}
           onClick={handleOnReset}
         >
           RESET
