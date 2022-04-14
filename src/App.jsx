@@ -1,4 +1,4 @@
-import { ActionIcon } from "@mantine/core";
+// import { ActionIcon } from "@mantine/core";
 import { useInterval } from "use-interval";
 import { useCallback, useState } from "react";
 
@@ -46,28 +46,22 @@ const App = () => {
         <div>.</div>
         <div className="mx-3">{getCentiSecondsStr(time)}</div>
       </div>
-      <div className="my-6 flex items-end">
-        <ActionIcon className="mx-8" variant="outline" size={90} radius={"50%"}>
+      <div className="my-6 flex items-center">
+        <button className="w-24 h-24 mx-8 text-base font-bold text-gray-500 border-2 border-gray-500 rounded-full hover:bg-gray-50 active:bg-gray-100 active:translate-y-0.5">
           DUMMY
-        </ActionIcon>
-        <ActionIcon
-          className="mx-8"
-          variant="outline"
-          size={120}
-          radius={"50%"}
+        </button>
+        <button
+          className="w-32 h-32 mx-8 text-2xl font-bold text-gray-500 border-2 border-gray-500 rounded-full hover:bg-gray-50 active:bg-gray-100 active:translate-y-0.5"
           onClick={handleOnStart}
         >
           {running ? "STOP" : "START"}
-        </ActionIcon>
-        <ActionIcon
-          className="mx-8"
-          variant="outline"
-          size={90}
-          radius={"50%"}
+        </button>
+        <button
+          className="w-24 h-24 mx-8 text-base font-bold text-gray-500 border-2 border-gray-500 rounded-full hover:bg-gray-50 active:bg-gray-100 active:translate-y-0.5"
           onClick={handleOnReset}
         >
           RESET
-        </ActionIcon>
+        </button>
       </div>
     </div>
   );
