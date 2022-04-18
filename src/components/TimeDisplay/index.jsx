@@ -17,11 +17,17 @@ const getCentiSecondsStr = (time) => {
 const TimeDisplay = (props) => {
   return (
     <div className="my-6 flex font-roboto text-9xl text-gray-800 dark:text-gray-100">
-      <div className="mx-3">{getMinutesStr(props.time)}</div>
+      <div className="mx-3" data-testid="time-display-min">
+        {getMinutesStr(props.time)}
+      </div>
       <div className="-translate-y-2.5">:</div>
-      <div className="mx-3">{getSecondsStr(props.time)}</div>
+      <div className="mx-3" data-testid="time-display-sec">
+        {getSecondsStr(props.time)}
+      </div>
       <div>.</div>
-      <div className="mx-3">{getCentiSecondsStr(props.time)}</div>
+      <div className="mx-3" data-testid="time-display-cs">
+        {getCentiSecondsStr(props.time)}
+      </div>
     </div>
   );
 };
