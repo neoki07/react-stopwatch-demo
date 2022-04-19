@@ -1,9 +1,10 @@
-import { useInterval } from "use-interval";
 import { useState } from "react";
-import TimeDisplay from "src/components/TimeDisplay";
+import { useInterval } from "use-interval";
+
+import DarkAndLightButton from "src/components/DarkAndLightButton";
 import ResetButton from "src/components/ResetButton";
 import StartAndStopButton from "src/components/StartAndStopButton";
-import DarkAndLightButton from "src/components/DarkAndLightButton";
+import TimeDisplay from "src/components/TimeDisplay";
 
 const App = () => {
   const [running, setRunning] = useState(false);

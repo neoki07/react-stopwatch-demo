@@ -1,7 +1,8 @@
-import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import StartAndStopButton from "src/components/StartAndStopButton";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { useState } from "react";
+
+import StartAndStopButton from "src/components/StartAndStopButton";
 
 const MockStartAndStopButton = () => {
   const [running, setRunning] = useState(false);

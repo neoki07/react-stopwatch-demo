@@ -1,7 +1,8 @@
-import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import DarkAndLightButton from "src/components/DarkAndLightButton";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { useState } from "react";
+
+import DarkAndLightButton from "src/components/DarkAndLightButton";
 
 const MockDarkAndLightButton = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);

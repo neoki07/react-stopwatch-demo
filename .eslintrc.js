@@ -26,6 +26,17 @@ module.exports = {
     "no-var": "error",
     "import/no-unresolved": [2, { ignore: ["^src"] }],
     "no-unused-vars": "off",
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        pathGroupsExcludedImportTypes: ["builtin"],
+        alphabetize: { order: "asc", caseInsensitive: true },
+        pathGroups: [
+          { pattern: "src/**", group: "internal", position: "before" },
+        ],
+      },
+    ],
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "warn",
