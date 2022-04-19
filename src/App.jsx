@@ -17,7 +17,7 @@ const App = () => {
   }, 10);
 
   return (
-    <div className="antialiased h-screen flex flex-col justify-center items-center dark:bg-gray-900">
+    <div className="flex h-screen flex-col items-center justify-center antialiased dark:bg-gray-900">
       <TimeDisplay time={time} />
       <div className="my-6 flex items-center">
         <DarkAndLightButton

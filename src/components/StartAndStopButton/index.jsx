@@ -9,11 +9,11 @@ const StartAndStopButton = (props) => {
 
   return (
     <button
-      className={`w-32 h-32 mx-8 text-2xl font-semibold text-white border-2 rounded-full ${
+      className={`mx-8 h-32 w-32 rounded-full border-2 text-2xl font-semibold text-white active:translate-y-0.5 ${
         running
           ? "border-rose-700 bg-rose-500 hover:bg-rose-600"
           : "border-sky-700 bg-sky-500 hover:bg-sky-600"
-      } active:translate-y-0.5`}
+      } `}
       onClick={handleOnStart}
     >
       {running ? "STOP" : "START"}

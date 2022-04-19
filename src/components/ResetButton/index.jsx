@@ -10,7 +10,7 @@ const ResetButton = (props) => {
 
   return (
     <button
-      className="w-24 h-24 mx-8 text-base font-bold text-gray-600 dark:text-gray-200 border-2 border-gray-400 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 active:translate-y-0.5"
+      className="mx-8 h-24 w-24 rounded-full border-2 border-gray-400 bg-gray-100 text-base font-bold text-gray-600 hover:bg-gray-200 active:translate-y-0.5 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
       onClick={handleOnReset}
     >
       RESET
