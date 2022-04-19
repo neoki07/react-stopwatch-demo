@@ -12,7 +12,7 @@ const App = () => {
 
   useInterval(() => {
     if (running) {
-      setTime((t) => t + 0.01);
+      setTime((time) => time + 0.01);
     }
   }, 10);
 

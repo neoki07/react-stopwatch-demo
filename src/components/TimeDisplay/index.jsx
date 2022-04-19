@@ -15,18 +15,20 @@ const getCentiSecondsStr = (time) => {
 };
 
 const TimeDisplay = (props) => {
+  const { time } = props;
+
   return (
     <div className="my-6 flex font-roboto text-9xl text-gray-800 dark:text-gray-100">
       <div className="mx-3" data-testid="time-display-min">
-        {getMinutesStr(props.time)}
+        {getMinutesStr(time)}
       </div>
       <div className="-translate-y-2.5">:</div>
       <div className="mx-3" data-testid="time-display-sec">
-        {getSecondsStr(props.time)}
+        {getSecondsStr(time)}
       </div>
       <div>.</div>
       <div className="mx-3" data-testid="time-display-cs">
-        {getCentiSecondsStr(props.time)}
+        {getCentiSecondsStr(time)}
       </div>
     </div>
   );
