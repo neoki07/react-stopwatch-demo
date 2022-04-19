@@ -15,17 +15,17 @@ describe("Dark/Light Button", () => {
   it("should render light button when dark button is clicked once", () => {
     render(<MockDarkAndLightButton />);
 
-    const darkOrLightButton = screen.getByRole("button", { name: "DARK" });
-    fireEvent.click(darkOrLightButton);
-    expect(darkOrLightButton).toHaveTextContent("LIGHT");
+    const darkAndLightButton = screen.getByRole("button", { name: "DARK" });
+    fireEvent.click(darkAndLightButton);
+    expect(darkAndLightButton).toHaveTextContent("LIGHT");
   });
 
   it("should render dark button when dark button is clicked twice", () => {
     render(<MockDarkAndLightButton />);
 
-    const darkOrLightButton = screen.getByRole("button", { name: "DARK" });
-    fireEvent.click(darkOrLightButton);
-    fireEvent.click(darkOrLightButton);
-    expect(darkOrLightButton).toHaveTextContent("DARK");
+    const darkAndLightButton = screen.getByRole("button", { name: "DARK" });
+    fireEvent.click(darkAndLightButton);
+    fireEvent.click(darkAndLightButton);
+    expect(darkAndLightButton).toHaveTextContent("DARK");
   });
 });

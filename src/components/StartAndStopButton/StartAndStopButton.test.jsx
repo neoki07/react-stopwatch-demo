@@ -13,17 +13,17 @@ describe("Start/Stop Button", () => {
   it("should render stop button when start button is clicked once", () => {
     render(<MockStartAndStopButton />);
 
-    const startOrStopButton = screen.getByRole("button", { name: "START" });
-    fireEvent.click(startOrStopButton);
-    expect(startOrStopButton).toHaveTextContent("STOP");
+    const startAndStopButton = screen.getByRole("button", { name: "START" });
+    fireEvent.click(startAndStopButton);
+    expect(startAndStopButton).toHaveTextContent("STOP");
   });
 
   it("should render start button when start button is clicked twice", () => {
     render(<MockStartAndStopButton />);
 
-    const startOrStopButton = screen.getByRole("button", { name: "START" });
-    fireEvent.click(startOrStopButton);
-    fireEvent.click(startOrStopButton);
-    expect(startOrStopButton).toHaveTextContent("START");
+    const startAndStopButton = screen.getByRole("button", { name: "START" });
+    fireEvent.click(startAndStopButton);
+    fireEvent.click(startAndStopButton);
+    expect(startAndStopButton).toHaveTextContent("START");
   });
 });
