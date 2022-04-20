@@ -32,7 +32,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom --verbose=true",
     "eject": "react-scripts eject",
     "lint": "run-p --continue-on-error lint:*",
     "lint:eslint": "eslint --ext .jsx,.js .",
