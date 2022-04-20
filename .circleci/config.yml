@@ -1,0 +1,21 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.0.2
+
+jobs:
+  build_and_test:
+    docker:
+      - image: cimg/node:17.9.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Run tests
+          command: yarn test
+
+workflows:
+  build_and_test:
+    jobs:
+      - build_and_test
