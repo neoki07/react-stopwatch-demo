@@ -4,18 +4,35 @@ orbs:
   node: circleci/node@5.0.2
 
 jobs:
-  build_and_test:
+  build:
     docker:
       - image: cimg/node:17.9.0
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
+  lint:
+    docker:
+      - image: cimg/node:17.9.0
+    steps:
+      - run:
+          name: Run lint
+          command: yarn lint
+  test:
+    docker:
+      - image: cimg/node:17.9.0
+    steps:
       - run:
           name: Run tests
           command: yarn test
 
 workflows:
-  build_and_test:
+  build:
     jobs:
-      - build_and_test
+      - build
+      - lint:
+          requires:
+            - build
+      - test:
+          requires:
+            - lint
