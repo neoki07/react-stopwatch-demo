@@ -15,6 +15,7 @@ jobs:
     docker:
       - image: cimg/node:17.9.0
     steps:
+      - checkout
       - run:
           name: Run lint
           command: yarn lint
@@ -22,6 +23,7 @@ jobs:
     docker:
       - image: cimg/node:17.9.0
     steps:
+      - checkout
       - run:
           name: Run tests
           command: yarn test
