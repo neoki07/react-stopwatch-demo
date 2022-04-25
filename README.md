@@ -23,3 +23,12 @@ https://react-stopwatch-demo.vercel.app/
 * Tailwind CSS
 * CircleCI
 * Visual Studio Code
+
+## 利用方法
+
+```sh
+git clone https://github.com/ot07/react-stopwatch-demo.git
+cd react-stopwatch-demo
+yarn install
+yarn start
+```
